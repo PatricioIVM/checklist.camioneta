@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Vehículos</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="formulario">
+
+<h2>REGISTRO DE CHEQUEO SEGURIDAD DE VEHÍCULOS</h2>
+
+<table class="tabla">
+<tr>
+<td>Conductor</td>
+<td><input id="conductor"></td>
+<td>Patente</td>
+<td><input id="patente"></td>
+</tr>
+
+<tr>
+<td>Destino</td>
+<td><input id="destino"></td>
+<td>Fecha</td>
+<td><input type="date" id="fecha"></td>
+</tr>
+
+<tr>
+<td>Tipo Vehículo</td>
+<td><input id="tipo"></td>
+<td>Kilometraje</td>
+<td><input type="number" id="km"></td>
+</tr>
+</table>
+
+<h3>DOCUMENTOS</h3>
+
+<table class="tabla">
+<tr><td>Permiso circulación</td><td><input type="checkbox"></td></tr>
+<tr><td>Revisión técnica</td><td><input type="checkbox"></td></tr>
+<tr><td>Seguro obligatorio</td><td><input type="checkbox"></td></tr>
+</table>
+
+<h3>LUCES</h3>
+
+<table class="tabla">
+<tr>
+<td>Luz baja</td>
+<td><input type="radio" name="lb">Bueno</td>
+<td><input type="radio" name="lb">Malo</td>
+</tr>
+
+<tr>
+<td>Luz alta</td>
+<td><input type="radio" name="la">Bueno</td>
+<td><input type="radio" name="la">Malo</td>
+</tr>
+</table>
+
+<h3>NEUMÁTICOS</h3>
+
+<table class="tabla">
+<tr>
+<td>Delanteros</td>
+<td><input type="radio" name="nd">Bueno</td>
+<td><input type="radio" name="nd">Malo</td>
+</tr>
+
+<tr>
+<td>Traseros</td>
+<td><input type="radio" name="nt">Bueno</td>
+<td><input type="radio" name="nt">Malo</td>
+</tr>
+</table>
+
+<h3>OBSERVACIONES</h3>
+<textarea id="obs"></textarea>
+
+<h3>FIRMA</h3>
+<canvas id="firma"></canvas>
+<button onclick="limpiarFirma()">Limpiar</button>
+
+<br><br>
+
+<button onclick="generarPDF()">Generar PDF</button>
+<button onclick="generarImagen()">Generar Imagen</button>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
